@@ -1,15 +1,10 @@
-## Welcome to GitHub Pages
+## Shweta Pandey
 
-You can use the [editor on GitHub](https://github.com/shwetaiisc/shwetaiisc.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+I am Shweta, I am a first year computer science ph.D. sudent at the Indian Institute of Science. 
+I am advised by Prof. Arkaprava Basu. 
 
 ### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
 
 # Header 1
 ## Header 2
