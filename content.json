@@ -1,0 +1,56 @@
+{
+  "about": {
+    "name": "Shweta Pandey",
+    "title": "PhD Student, Indian Institute of Science (IISc)",
+    "bio": "I am a PhD student at IISc, working on high-performance storage systems and data management. My research interests include storage engines, databases, and systems performance.",
+    "email": "shweta@example.com",
+    "location": "Bangalore, India"
+  },
+  "education": [
+    {
+      "degree": "PhD in Computer Science",
+      "institution": "Indian Institute of Science (IISc)",
+      "years": "2020 – Present"
+    },
+    {
+      "degree": "BTech in Computer Science",
+      "institution": "Some University",
+      "years": "2016 – 2020"
+    }
+  ],
+  "experience": [
+    {
+      "role": "PhD Student",
+      "organization": "IISc Bangalore",
+      "years": "2020 – Present",
+      "description": "Research in storage systems, databases, and performance studies."
+    }
+  ],
+  "publications": [
+    {
+      "title": "H-Rocks: High-Performance RocksDB for Hybrid Storage",
+      "authors": "Shweta Pandey, et al.",
+      "venue": "SIGMOD 2025",
+      "links": {
+        "code": "https://github.com/csl-iisc/H-Rocks-SIGMOD25-artifact",
+        "video": "",
+        "presentation": "",
+        "paper": ""
+      }
+    }
+    // Add more publications here
+  ],
+  "projects": [
+    {
+      "name": "H-Rocks",
+      "description": "A performance-optimized version of RocksDB for hybrid storage.",
+      "link": "https://github.com/csl-iisc/H-Rocks-SIGMOD25-artifact"
+    }
+    // Add more projects here
+  ],
+  "contact": {
+    "email": "shweta@example.com",
+    "linkedin": "",
+    "github": "https://github.com/shwetaiisc"
+  }
+}
