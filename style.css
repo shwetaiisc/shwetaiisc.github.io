@@ -16,6 +16,9 @@ body {
 nav {
   background: var(--primary);
   padding: 0.7em 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 nav ul {
@@ -36,9 +39,12 @@ nav a {
   text-decoration: none;
   font-weight: 500;
   font-size: 1.1em;
+  transition: color 0.2s;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
+  color: var(--accent);
   text-decoration: underline;
 }
 
@@ -52,7 +58,8 @@ main {
 }
 
 section {
-  margin-bottom: 2em;
+  margin-bottom: 2.8em;
+  scroll-margin-top: 68px;
 }
 
 section h2 {
@@ -69,6 +76,12 @@ footer {
   background: #ececec;
   color: #444;
   margin-top: 2em;
+}
+
+.news-item, .talk-item {
+  margin-bottom: 1.1em;
+  padding-left: 0.8em;
+  border-left: 3px solid var(--accent);
 }
 
 @media (max-width: 600px) {
