@@ -4,6 +4,7 @@ fetch('content.json')
   .then(content => {
     // About
     document.getElementById('about').innerHTML = `
+    ${content.about.photo ? `<img src="${content.about.photo}" alt="${content.about.name}" class="profile-pic">` : ""}
       <h2>About Me</h2>
       <h3>${content.about.name}</h3>
       <p><strong>${content.about.title}</strong></p>
