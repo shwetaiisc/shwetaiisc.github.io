@@ -12,13 +12,17 @@ fetch('content.json')
       <p><b>Email:</b> <a href="mailto:${content.about.email}">${content.about.email}</a></p>
     `;
 
-    // Education
-    document.getElementById('education').innerHTML = `
-      <h2>Education</h2>
+    // Publications
+    document.getElementById('publications').innerHTML = `
+      <h2>Publications</h2>
       <ul>
-        ${content.education.map(edu => `
+        ${content.publications.map(pub => `
           <li>
-            <b>${edu.degree}</b>, ${edu.institution} <span style="color: #888">(${edu.years})</span>
+            <b>${pub.title}</b><br>
+            <em>${pub.authors}</em><br>
+            <span>${pub.venue}</span><br>
+            ${Object.entries(pub.links).map(([type, url]) => url ?
+              `<a href="${url}" target="_blank">${type[0].toUpperCase()+type.slice(1)}</a>` : '').join(' ')}
           </li>
         `).join('')}
       </ul>
@@ -37,17 +41,32 @@ fetch('content.json')
       </ul>
     `;
 
-    // Publications
-    document.getElementById('publications').innerHTML = `
-      <h2>Publications</h2>
+    // Talks
+    document.getElementById('talks').innerHTML = `
+      <h2>Talks</h2>
+      ${content.talks.length === 0 ? "<p>No talks yet.</p>" : ""}
       <ul>
-        ${content.publications.map(pub => `
-          <li>
-            <b>${pub.title}</b><br>
-            <em>${pub.authors}</em><br>
-            <span>${pub.venue}</span><br>
-            ${Object.entries(pub.links).map(([type, url]) => url ?
-              `<a href="${url}" target="_blank">${type[0].toUpperCase()+type.slice(1)}</a>` : '').join(' ')}
+        ${content.talks.map(talk => `
+          <li class="talk-item">
+            <b>${talk.title}</b><br>
+            <span>${talk.event}</span>
+            <span style="color:#888;"> (${talk.date})</span>
+            ${talk.link ? `<br><a href="${talk.link}" target="_blank">Link</a>` : ''}
+          </li>
+        `).join('')}
+      </ul>
+    `;
+
+    // News
+    document.getElementById('news').innerHTML = `
+      <h2>News</h2>
+      ${content.news.length === 0 ? "<p>No news yet.</p>" : ""}
+      <ul>
+        ${content.news.map(item => `
+          <li class="news-item">
+            <span style="color:#888;">${item.date}:</span> 
+            ${item.text}
+            ${item.link ? `<br><a href="${item.link}" target="_blank">More</a>` : ''}
           </li>
         `).join('')}
       </ul>
@@ -78,6 +97,26 @@ fetch('content.json')
 
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Highlight active navbar link on scroll
+    const navLinks = document.querySelectorAll('nav a');
+    const sectionIds = ['about','publications','experience','talks','news','projects','contact'];
+    const sectionElements = sectionIds.map(id => document.getElementById(id));
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sectionElements.forEach((sec, idx) => {
+        const top = sec.getBoundingClientRect().top + window.scrollY - 80;
+        if(window.scrollY >= top) {
+          current = sectionIds[idx];
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if(link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
   })
   .catch(e => {
     document.querySelector('main').innerHTML = "<p>Could not load content. Please check your content.json file.</p>";
