@@ -6,26 +6,6 @@
     "email": "shweta@example.com",
     "location": "Bangalore, India"
   },
-  "education": [
-    {
-      "degree": "PhD in Computer Science",
-      "institution": "Indian Institute of Science (IISc)",
-      "years": "2020 – Present"
-    },
-    {
-      "degree": "BTech in Computer Science",
-      "institution": "Some University",
-      "years": "2016 – 2020"
-    }
-  ],
-  "experience": [
-    {
-      "role": "PhD Student",
-      "organization": "IISc Bangalore",
-      "years": "2020 – Present",
-      "description": "Research in storage systems, databases, and performance studies."
-    }
-  ],
   "publications": [
     {
       "title": "H-Rocks: High-Performance RocksDB for Hybrid Storage",
@@ -38,7 +18,29 @@
         "paper": ""
       }
     }
-    // Add more publications here
+  ],
+  "experience": [
+    {
+      "role": "PhD Student",
+      "organization": "IISc Bangalore",
+      "years": "2020 – Present",
+      "description": "Research in storage systems, databases, and performance studies."
+    }
+  ],
+  "talks": [
+    {
+      "title": "Invited Talk: Storage Systems for Hybrid Workloads",
+      "event": "IISc Research Seminar",
+      "date": "2025-08-15",
+      "link": ""
+    }
+  ],
+  "news": [
+    {
+      "date": "2025-09-10",
+      "text": "Our paper on H-Rocks accepted at SIGMOD 2025!",
+      "link": ""
+    }
   ],
   "projects": [
     {
@@ -46,7 +48,6 @@
       "description": "A performance-optimized version of RocksDB for hybrid storage.",
       "link": "https://github.com/csl-iisc/H-Rocks-SIGMOD25-artifact"
     }
-    // Add more projects here
   ],
   "contact": {
     "email": "shweta@example.com",
