@@ -5,6 +5,19 @@
   --text: #222;
 }
 
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1em;
+  border: 3px solid var(--accent);
+  box-shadow: 0 2px 8px rgba(30,53,94,0.09);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
