@@ -144,6 +144,24 @@ fetch('content.json')
       });
     });
   })
+  // Mobile menu toggle
+const navEl = document.querySelector('nav');
+const menuBtn = document.getElementById('menuBtn');
+
+if (menuBtn) {
+  menuBtn.addEventListener('click', () => {
+    const open = navEl.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  // Close menu when a link is tapped
+  const links = document.querySelectorAll('nav a');
+  links.forEach(a => a.addEventListener('click', () => {
+    navEl.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }));
+}
+
   .catch(e => {
     document.querySelector('main').innerHTML = "<p>Could not load content. Please check your content.json file.</p>";
     console.error(e);
