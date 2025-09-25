@@ -129,6 +129,60 @@ footer {
   text-decoration: underline;
 }
 
+.header {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  gap: 18px;
+  padding: 18px;
+  background: linear-gradient(180deg, rgba(37,99,235,0.06), rgba(37,99,235,0)), var(--surface);
+  margin-bottom: 2em;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+}
+
+.header-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 18px rgba(2, 6, 23, 0.12);
+}
+
+.header-info h1 {
+  font-size: 1.7em;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+}
+
+.header-info h2 {
+  font-size: 0.95em;
+  font-weight: 600;
+  margin: 0 0 14px 0;
+  color: var(--muted);
+}
+
+.bio {
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+.bio a {
+  color: var(--accent-strong);
+  font-weight: 600;
+  text-decoration: none;
+}
+.bio a:hover {
+  text-decoration: underline;
+}
+
+
 @media (max-width: 600px) {
   main {
     padding: 1em 0.5em;
