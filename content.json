@@ -119,27 +119,33 @@
     }
   ],
   "projects": [
-    {
-      "name": "H-Rocks",
-      "description": "A performance-optimized version of RocksDB for hybrid storage. Accelerates memtable, WAL, and compaction using GPU offloading.",
-      "link": "https://github.com/csl-iisc/H-Rocks-SIGMOD25-artifact"
-    },
-    {
-      "name": "HyCache",
-      "description": "Hybrid CPU-GPU caching layer for fast DNN input pipelines. Focuses on preprocessing and memory hierarchy utilization.",
-      "link": ""
-    },
-    {
-      "name": "GPM",
-      "description": "Enables GPU access to persistent memory with a custom programming model and persistency protocol.",
-      "link": ""
-    },
-    {
-      "name": "SBPM (Scoped Buffered Persistency Models)",
-      "description": "Explores correctness and performance trade-offs for GPU persistency using scoped buffering techniques.",
-      "link": ""
-    }
-  ],
+  {
+    "name": "Optimizing Text-to-Image Generation Inference",
+    "description": "Architectural and software-level optimizations for accelerating large-scale diffusion transformer pipelines and improving end-to-end inference throughput on GPUs.",
+    "link": ""
+  },
+  {
+    "name": "LLVM Compiler Optimization for Automatic Parallel Code Generation",
+    "description": "Analyzed and enhanced cost models for OpenMP-based parallelization in LLVM to improve automatic parallel code generation.",
+    "link": ""
+  },
+  {
+    "name": "Non-Volatile Memory (NVM) Database",
+    "description": "Designed and evaluated storage engines that efficiently leverage NVM for durability and performance, with a focus on GPU-accelerated access and persistency models.",
+    "link": ""
+  },
+  {
+    "name": "Cache Replacement Policies for NVM",
+    "description": "Conducted a comparative survey of cache replacement policies tailored for non-volatile memory and their impact on persistence-aware caching.",
+    "link": ""
+  },
+  {
+    "name": "Static Analysis for Null Pointer Detection",
+    "description": "Built a static analysis framework to identify potential null pointer dereferences using data flow and control flow analysis techniques.",
+    "link": ""
+  }
+]
+
   "awards": [
     {
       "title": "Google PhD Fellowship",
