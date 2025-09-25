@@ -260,3 +260,50 @@ footer {
     margin: 0.5em 0;
   }
 }
+
+/* --- Mobile nav toggle --- */
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 4px 10px;
+  cursor: pointer;
+  position: absolute;
+  left: 10px;
+  top: 6px;
+}
+
+@media (max-width: 768px) {
+  nav {
+    position: sticky;
+    top: 0;
+  }
+
+  /* show hamburger; hide list by default */
+  .menu-btn { display: block; }
+
+  nav ul {
+    display: none;                 /* hidden until toggled */
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2em;
+    background: var(--primary);
+    padding: 0.7em 0.5em;
+    margin: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  /* when nav has .open, show the menu */
+  nav.open ul { display: flex; }
+
+  nav li { margin: 0.35em 0; }
+
+  nav a {
+    font-size: 1.05em;
+    padding: 6px 10px;
+  }
+}
