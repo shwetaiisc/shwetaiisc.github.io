@@ -198,7 +198,7 @@ footer {
   display: grid;
   grid-template-columns: 160px 1fr;
   gap: 20px;
-  align-items: start;
+  align-items: center;
 }
 
 .about-photo {
@@ -208,6 +208,8 @@ footer {
   border-radius: 12px;
   border: 2px solid var(--accent);
   box-shadow: 0 2px 8px rgba(30, 53, 94, 0.12);
+  object-position: 50% 22%;
+  margin-top: 6px;
 }
 
 .about-text h1 {
