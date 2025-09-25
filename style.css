@@ -5,53 +5,6 @@
   --text: #222;
 }
 
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1em;
-  border: 3px solid var(--accent);
-  box-shadow: 0 2px 8px rgba(30,53,94,0.09);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: white;
-  padding: 2em 1.2em;
-  width: 220px;
-  height: 100vh;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.sidebar .profile-pic-square {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 3px solid var(--accent);
-  box-shadow: 0 2px 8px rgba(30,53,94,0.09);
-  margin-bottom: 1em;
-}
-
-.sidebar h2 {
-  font-size: 1.2em;
-  margin: 0.5em 0 0.2em 0;
-  color: var(--primary);
-}
-
-.sidebar p {
-  font-size: 0.95em;
-  color: #444;
-  margin: 0;
-}
-
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -97,12 +50,11 @@ nav a.active {
 
 main {
   max-width: 800px;
-  margin: 2em auto 2em auto;
-  margin-left: 240px; /* offset for sidebar */
+  margin: 2em auto;
   background: #fff;
   padding: 2em 1.5em;
   border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(30,53,94,0.08);
+  box-shadow: 0 2px 12px rgba(30, 53, 94, 0.08);
 }
 
 section {
@@ -132,24 +84,59 @@ footer {
   border-left: 3px solid var(--accent);
 }
 
-@media (max-width: 600px) {
-  .sidebar {
-    position: static;
-    width: 100%;
-    height: auto;
-    padding: 1em 0;
-    box-shadow: none;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .sidebar .profile-pic-square {
-    width: 90px;
-    height: 90px;
-  }
-
-  main {
-    margin-left: 0;
-    padding: 1em 0.5em;
-  }
+/* Profile section styling */
+.profile-flex {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  flex-wrap: wrap;
 }
 
+.profile-img-left {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid var(--accent);
+  box-shadow: 0 2px 8px rgba(30, 53, 94, 0.1);
+}
+
+.profile-flex h1 {
+  margin: 0;
+  font-size: 1.8em;
+  color: var(--primary);
+}
+
+.profile-flex h3 {
+  margin-top: 0.3em;
+  font-size: 1.1em;
+  color: #444;
+}
+
+.profile-flex p {
+  margin-top: 1em;
+  font-size: 1em;
+  color: #333;
+}
+
+.profile-flex a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.profile-flex a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1em 0.5em;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav li {
+    margin: 0.5em 0;
+  }
+}
