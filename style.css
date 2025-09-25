@@ -21,19 +21,22 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
+  /* subtle shadow to separate from content on mobile when menu scrolls */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 nav ul {
   display: flex;
   list-style: none;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-wrap: wrap;      /* desktop: wrap is fine */
   margin: 0;
   padding: 0;
   gap: 1.2em;
 }
 
-nav li { margin: 0; }
+nav li { margin: 0; flex: 0 0 auto; }
 
 nav a {
   color: #fff;
@@ -41,6 +44,7 @@ nav a {
   font-weight: 500;
   font-size: 1.1em;
   transition: color 0.2s;
+  padding: 0.15em 0.1em; /* touch target tweak; expanded on mobile below */
 }
 
 nav a:hover,
@@ -176,22 +180,34 @@ footer {
    RESPONSIVE
    ========================= */
 
-/* Compact mobile nav: single-row, scrollable if overflow */
+/* Compact mobile nav (CSS-only):
+   - single row
+   - horizontal scroll if overflow
+   - larger tap targets
+   - gradient edge masks so it feels native */
 @media (max-width: 768px) {
   nav { padding: 0.5em 0; }
 
   nav ul {
     justify-content: flex-start;
-    flex-wrap: nowrap;            /* keep one line */
-    overflow-x: auto;             /* allow sideways scroll */
+    flex-wrap: nowrap;           /* keep one line */
+    overflow-x: auto;            /* allow sideways scroll */
     -webkit-overflow-scrolling: touch;
-    gap: 0.8rem;
-    padding: 0.4em 0.6em;
+    gap: 0.9rem;
+    padding: 0.45em 0.6em;
+    margin: 0;
+
+    /* fade edges hint */
+    mask-image: linear-gradient(to right, transparent 0, black 18px, black calc(100% - 18px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 18px, black calc(100% - 18px), transparent 100%);
   }
 
   nav ul::-webkit-scrollbar { display: none; } /* hide scrollbar on iOS/Chrome */
 
-  nav a { font-size: 1rem; padding: 0.25em 0.35em; }
+  nav a {
+    font-size: 1rem;
+    padding: 0.35em 0.2em;       /* better tap size */
+  }
 }
 
 /* Stack About card on small phones, reduce paddings */
