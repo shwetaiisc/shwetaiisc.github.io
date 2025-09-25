@@ -8,50 +8,44 @@
 </head>
 <body>
 
-<nav>
-  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
-  <ul>
-    <li><a href="#about" class="active">About</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#talks">Talks</a></li>
-    <li><a href="#news">News</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- Desktop nav (auto-hidden on mobile via CSS) -->
+  <nav>
+    <ul>
+      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#talks">Talks</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
+  <main>
 
+    <!-- ABOUT (photo + text side by side; JS only fills text/links) -->
+    <section id="about" class="about-card">
+      <div class="about-grid">
+        <img id="about-photo" src="shweta.png" alt="Shweta Pandey" class="about-photo" />
+        <div class="about-text">
+          <h1 id="about-name">Shweta Pandey</h1>
+          <h2 id="about-title">
+            PhD Student, Indian Institute of Science (IISc), <a href="https://www.csa.iisc.ac.in/" target="_blank" rel="noopener">CSA @ IISc Bangalore</a>
+          </h2>
+          <hr class="about-sep" />
+          <p id="about-bio" class="bio"></p>
+          <p class="bio">
+            I work with <a href="https://www.csa.iisc.ac.in/~arkapravab/" target="_blank" rel="noopener">Prof. Arkaprava Basu</a> at the
+            <a href="https://www.csa.iisc.ac.in/" target="_blank" rel="noopener">Department of Computer Science and Automation, IISc</a>.
+          </p>
+          <p class="meta"><b>Location:</b> <span id="about-location">Bangalore, India</span></p>
+          <p class="meta"><b>Email:</b> <a id="about-email" href="mailto:shwetapandey@iisc.ac.in">shwetapandey@iisc.ac.in</a></p>
+        </div>
+      </div>
+    </section>
 
-  <main class="main-wrapper">
-
-    <!-- ✨ ABOUT SECTION -->
-   <section id="about" class="about-card">
-  <div class="about-grid">
-    <img id="about-photo" src="shweta.png" alt="Shweta Pandey" class="about-photo" />
-    <div class="about-text">
-      <h1 id="about-name">Shweta Pandey</h1>
-      <h2 id="about-title">
-        PhD Student, <a href="https://www.csa.iisc.ac.in/" target="_blank">CSA @ IISc Bangalore</a>
-      </h2>
-
-      <p id="about-bio" class="bio">
-        <!-- main.js will inject bio text -->
-      </p>
-
-      <p class="bio">
-        I work with <a href="https://www.csa.iisc.ac.in/~arkapravab/" target="_blank">Prof. Arkaprava Basu</a> at the
-        <a href="https://www.csa.iisc.ac.in/" target="_blank">Department of Computer Science and Automation, IISc</a>.
-      </p>
-
-      <p class="meta"><b>Location:</b> <span id="about-location">Bangalore, India</span></p>
-      <p class="meta"><b>Email:</b> <a id="about-email" href="mailto:shwetapandey@iisc.ac.in">shwetapandey@iisc.ac.in</a></p>
-    </div>
-  </div>
-</section>
-
-    <!-- 🔬 OTHER SECTIONS (auto-populated via JS) -->
+    <!-- Auto-populated sections -->
     <section id="publications"></section>
     <section id="education"></section>
     <section id="experience"></section>
@@ -62,7 +56,7 @@
 
   </main>
 
-  <footer class="footer">
+  <footer>
     <span>&copy; <span id="year"></span> Shweta Pandey</span>
   </footer>
 
