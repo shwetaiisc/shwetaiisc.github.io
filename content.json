@@ -2,37 +2,81 @@
   "about": {
     "name": "Shweta Pandey",
     "title": "PhD Student, Indian Institute of Science (IISc)",
-    "bio": "I am a PhD student at IISc, working on high-performance storage systems and data management. My research interests include storage engines, databases, and systems performance.",
+    "bio": "I am a PhD student at IISc working on high-performance systems that span heterogeneous compute and memory hierarchies—focusing on GPU-accelerated storage, persistence, and inference. My research explores architectural and software techniques to optimize GPU performance across storage engines, database systems, and large-model inference.",
     "email": "shweta@example.com",
     "location": "Bangalore, India"
-
   },
   "publications": [
     {
-      "title": "H-Rocks: High-Performance RocksDB for Hybrid Storage",
-      "authors": "Shweta Pandey, et al.",
+      "title": "HyCache: Hybrid Caching for Accelerating DNN Input Preprocessing Pipelines",
+      "authors": "Keshav Jha Vinayak, Shweta Pandey, Murali Annavaram, Arkaprava Basu",
+      "venue": "USENIX ATC 2025",
+      "links": {}
+    },
+    {
+      "title": "H-Rocks: Heterogeneous CPU-GPU accelerated RocksDB on Persistent Memory",
+      "authors": "Shweta Pandey, Arkaprava Basu",
       "venue": "SIGMOD 2025",
       "links": {
-        "code": "https://github.com/csl-iisc/H-Rocks-SIGMOD25-artifact",
-        "video": "",
-        "presentation": "",
-        "paper": ""
+        "code": "https://github.com/csl-iisc/H-Rocks-SIGMOD25-artifact"
       }
+    },
+    {
+      "title": "Scoped Buffered Persistency Models for GPUs",
+      "authors": "Shweta Pandey, Aditya K Kamath, Arkaprava Basu",
+      "venue": "ASPLOS 2023",
+      "links": {}
+    },
+    {
+      "title": "GPM: Leveraging Persistent Memory from a GPU",
+      "authors": "Shweta Pandey, Aditya K Kamath, Arkaprava Basu",
+      "venue": "ASPLOS 2022",
+      "links": {}
     }
   ],
   "experience": [
     {
       "role": "PhD Student",
       "organization": "IISc Bangalore",
-      "years": "2020 – Present",
-      "description": "Research in storage systems, databases, and performance studies."
+      "years": "2021 – Present",
+      "description": "Research in GPU-accelerated storage systems, databases, and persistent memory with a focus on end-to-end performance optimization across heterogeneous memory and compute resources."
+    },
+    {
+      "role": "Research Intern",
+      "organization": "Adobe Research, India",
+      "years": "2024",
+      "description": "Worked on improving the throughput of text-to-image generation models by optimizing diffusion transformer pipelines using architectural and software-level techniques."
+    },
+    {
+      "role": "Software Engineering Intern",
+      "organization": "Smartek Pvt. Ltd.",
+      "years": "2018",
+      "description": "Built a chatbot system for an airline using NLP techniques for parsing, intent recognition, and response generation."
     }
   ],
   "talks": [
     {
-      "title": "Invited Talk: Storage Systems for Hybrid Workloads",
-      "event": "IISc Research Seminar",
-      "date": "2025-08-15",
+      "title": "H-Rocks: CPU-GPU accelerated RocksDB on Persistent Memory",
+      "event": "IIT Bombay SysTalk",
+      "date": "2025",
+      "link": ""
+    },
+    {
+      "title": "Scoped Buffered Persistency Models for GPUs",
+      "event": "ACM India ARCS",
+      "date": "2024",
+      "link": ""
+    },
+    {
+      "title": "GPM: Leveraging Persistent Memory from a GPU",
+      "event": "NVMW",
+      "date": "2022",
+      "link": ""
+    },
+    {
+      "title": "Leveraging Persistent Memory from a GPU",
+      "event": "ARCS 2023, EECS Symposium 2023",
+      "date": "2023",
       "link": ""
     }
   ],
@@ -41,18 +85,93 @@
       "date": "2025-09-10",
       "text": "Our paper on H-Rocks accepted at SIGMOD 2025!",
       "link": ""
+    },
+    {
+      "date": "2025-08-15",
+      "text": "Presented H-Rocks at IIT Bombay SysTalk 2025.",
+      "link": ""
     }
   ],
   "projects": [
     {
       "name": "H-Rocks",
-      "description": "A performance-optimized version of RocksDB for hybrid storage.",
+      "description": "A performance-optimized version of RocksDB for hybrid storage. Accelerates memtable, WAL, and compaction using GPU offloading.",
       "link": "https://github.com/csl-iisc/H-Rocks-SIGMOD25-artifact"
+    },
+    {
+      "name": "HyCache",
+      "description": "Hybrid CPU-GPU caching layer for fast DNN input pipelines. Focuses on preprocessing and memory hierarchy utilization.",
+      "link": ""
+    },
+    {
+      "name": "GPM",
+      "description": "Enables GPU access to persistent memory with a custom programming model and persistency protocol.",
+      "link": ""
+    },
+    {
+      "name": "SBPM (Scoped Buffered Persistency Models)",
+      "description": "Explores correctness and performance trade-offs for GPU persistency using scoped buffering techniques.",
+      "link": ""
+    }
+  ],
+  "awards": [
+    {
+      "title": "Google PhD Fellowship",
+      "year": "2022",
+      "description": "One of six awarded in the category of Software Systems and Networking."
+    },
+    {
+      "title": "EECS Symposium Best Presenter",
+      "year": "2023",
+      "description": "Best student presenter award at IISc’s EECS Symposium."
+    },
+    {
+      "title": "GATE 2018 Top Percentile",
+      "year": "2018",
+      "description": "Scored in the 99.9 percentile in the GATE exam."
+    },
+    {
+      "title": "Bachelors Rank Holder",
+      "year": "2018",
+      "description": "Ranked 3rd among 1000+ students in Computer Science."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Ph.D. in Computer Science and Engineering",
+      "institution": "Indian Institute of Science, Bangalore",
+      "years": "2021 – Present",
+      "gpa": "8.3/10"
+    },
+    {
+      "degree": "Masters by Research in Computer Science and Engineering",
+      "institution": "Indian Institute of Science, Bangalore",
+      "years": "2018 – 2021",
+      "gpa": "8.8/10"
+    },
+    {
+      "degree": "Bachelors in Computer Science and Engineering",
+      "institution": "UIT (RGPV), Bhopal",
+      "years": "2014 – 2018",
+      "gpa": "8.8/10"
     }
   ],
   "contact": {
     "email": "shweta@example.com",
-    "linkedin": "",
+    "linkedin": "https://linkedin.com/in/shweta-pandey-2401",
     "github": "https://github.com/shwetaiisc"
+  },
+  "skills": {
+    "programming": ["CUDA", "C", "C++", "Python", "Java (moderate)"],
+    "tools": ["RocksDB", "Nsight Compute", "Nsight Systems", "NvBit"],
+    "coursework": [
+      "High Performance Computer Architecture",
+      "Distributed Systems",
+      "Databases",
+      "Operating Systems",
+      "Program Analysis",
+      "Linear Algebra",
+      "Compiler Design"
+    ]
   }
 }
