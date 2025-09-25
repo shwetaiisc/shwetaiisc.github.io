@@ -14,14 +14,13 @@ body {
   line-height: 1.7;
 }
 
-/* Top nav */
+/* Top nav (hidden on mobile below) */
 nav {
   background: var(--primary);
   padding: 0.7em 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  /* subtle shadow to separate from content on mobile when menu scrolls */
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
@@ -30,7 +29,7 @@ nav ul {
   list-style: none;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;      /* desktop: wrap is fine */
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   gap: 1.2em;
@@ -44,7 +43,7 @@ nav a {
   font-weight: 500;
   font-size: 1.1em;
   transition: color 0.2s;
-  padding: 0.15em 0.1em; /* touch target tweak; expanded on mobile below */
+  padding: 0.15em 0.1em;
 }
 
 nav a:hover,
@@ -65,7 +64,7 @@ main {
 
 section {
   margin-bottom: 2.8em;
-  scroll-margin-top: 68px; /* for sticky nav offset */
+  scroll-margin-top: 68px; /* for sticky nav offset (desktop) */
 }
 
 section h2 {
@@ -115,30 +114,37 @@ footer {
   width: 160px !important;
   height: 160px !important;
   object-fit: cover;          /* keep square crop */
-  object-position: 50% 22%;   /* show more forehead; adjust 18–30% to taste */
+  object-position: 50% 22%;   /* show more forehead; tweak 18–30% */
   border-radius: 12px;
   border: 2px solid var(--accent);
   box-shadow: 0 2px 8px rgba(30, 53, 94, 0.12);
-  margin-top: 6px;            /* tiny nudge down */
+  margin-top: 6px;            /* subtle nudge down */
 }
 
 .about-text h1 {
   margin: 0 0 6px 0;
-  font-size: 1.6em;
+  font-size: 1.8em;
   color: var(--primary);
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .about-text h2 {
-  margin: 0 0 12px 0;
-  font-size: 1em;
-  font-weight: 500;
-  color: #555;
+  margin: 0 0 10px 0;
+  font-size: 1.02em;
+  font-weight: 600;
+  color: #3c556e;
+}
+
+.about-sep {
+  border: 0;
+  border-top: 2px solid #c9e1e3;
+  margin: 8px 0 14px 0;
 }
 
 .bio {
-  font-size: 0.95em;
-  line-height: 1.6;
+  font-size: 0.98em;
+  line-height: 1.7;
   margin: 0 0 12px 0;
 }
 
@@ -180,37 +186,15 @@ footer {
    RESPONSIVE
    ========================= */
 
-/* Compact mobile nav (CSS-only):
-   - single row
-   - horizontal scroll if overflow
-   - larger tap targets
-   - gradient edge masks so it feels native */
+/* Hide the nav entirely on mobile */
 @media (max-width: 768px) {
-  nav { padding: 0.5em 0; }
-
-  nav ul {
-    justify-content: flex-start;
-    flex-wrap: nowrap;           /* keep one line */
-    overflow-x: auto;            /* allow sideways scroll */
-    -webkit-overflow-scrolling: touch;
-    gap: 0.9rem;
-    padding: 0.45em 0.6em;
-    margin: 0;
-
-    /* fade edges hint */
-    mask-image: linear-gradient(to right, transparent 0, black 18px, black calc(100% - 18px), transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0, black 18px, black calc(100% - 18px), transparent 100%);
-  }
-
-  nav ul::-webkit-scrollbar { display: none; } /* hide scrollbar on iOS/Chrome */
-
-  nav a {
-    font-size: 1rem;
-    padding: 0.35em 0.2em;       /* better tap size */
-  }
+  nav { display: none; }
+  /* remove sticky-nav offset on mobile */
+  section { scroll-margin-top: 0; }
+  main { margin: 1em auto; padding: 1.25em 1em; }
 }
 
-/* Stack About card on small phones, reduce paddings */
+/* Stack About card on small phones */
 @media (max-width: 640px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -223,13 +207,9 @@ footer {
   }
 }
 
-/* Main padding tweak for very small screens */
-@media (max-width: 600px) {
-  main { padding: 1em 0.5em; }
-}
-
-/* Hide any hamburger/menu button if present */
-.menu-btn,
-button[aria-label="Toggle menu"] {
-  display: none !important;
+/* Very small screens */
+@media (max-width: 480px) {
+  .about-text h1 { font-size: 1.6em; }
+  .about-text h2 { font-size: 0.98em; }
+  .bio { font-size: 0.96em; }
 }
