@@ -2,38 +2,50 @@
   "about": {
     "name": "Shweta Pandey",
     "title": "PhD Student, Indian Institute of Science (IISc)",
-    "bio": "I am a PhD student at IISc working on high-performance systems that span heterogeneous compute and memory hierarchies—focusing on GPU-accelerated storage, persistence, and inference. My research explores architectural and software techniques to optimize GPU performance across storage engines, database systems, and large-model inference.",
-    "email": "shweta@example.com",
+    "bio": "I am a PhD student at IISc working on high-performance systems that span heterogeneous compute and memory hierarchies—focusing on GPU-accelerated storage, persistence. My research explores architectural and software techniques to optimize GPU performance across storage engines and database systems.",
+    "email": "shweta@iisc.ac.in",
     "location": "Bangalore, India"
   },
   "publications": [
-    {
-      "title": "HyCache: Hybrid Caching for Accelerating DNN Input Preprocessing Pipelines",
-      "authors": "Keshav Jha Vinayak, Shweta Pandey, Murali Annavaram, Arkaprava Basu",
-      "venue": "USENIX ATC 2025",
-      "links": {}
-    },
-    {
-      "title": "H-Rocks: Heterogeneous CPU-GPU accelerated RocksDB on Persistent Memory",
-      "authors": "Shweta Pandey, Arkaprava Basu",
-      "venue": "SIGMOD 2025",
-      "links": {
-        "code": "https://github.com/csl-iisc/H-Rocks-SIGMOD25-artifact"
-      }
-    },
-    {
-      "title": "Scoped Buffered Persistency Models for GPUs",
-      "authors": "Shweta Pandey, Aditya K Kamath, Arkaprava Basu",
-      "venue": "ASPLOS 2023",
-      "links": {}
-    },
-    {
-      "title": "GPM: Leveraging Persistent Memory from a GPU",
-      "authors": "Shweta Pandey, Aditya K Kamath, Arkaprava Basu",
-      "venue": "ASPLOS 2022",
-      "links": {}
+  {
+    "title": "HyCache: Hybrid Caching for Accelerating DNN Input Preprocessing Pipelines",
+    "authors": "Keshav Vinayak Jha, <b>Shweta Pandey</b>, Murali Annavaram, Arkaprava Basu",
+    "venue": "USENIX ATC 2025",
+    "links": {
+      "paper": "https://www.usenix.org/conference/atc25/presentation/jha"
     }
-  ],
+  },
+  {
+    "title": "H-Rocks: CPU-GPU Accelerated Heterogeneous RocksDB on Persistent Memory",
+    "authors": "<b>Shweta Pandey</b>, Arkaprava Basu",
+    "venue": "ACM SIGMOD 2025",
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3709694",
+      "code": "https://github.com/csl-iisc/H-Rocks-SIGMOD25-artifact",
+      "video": "https://csl.csa.iisc.ac.in/video/hrocks.mp4"
+    }
+  },
+  {
+    "title": "Scoped Buffered Persistency Models for GPUs",
+    "authors": "<b>Shweta Pandey</b>*, Aditya K Kamath*, Arkaprava Basu",
+    "venue": "ASPLOS 2023, Vancouver, Canada (*Equal contribution)",
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3575693.3575749",
+      "code": "https://github.com/csl-iisc/SBRP-ASPLOS23",
+      "video": "https://www.youtube.com/watch?v=g2LdLBIDww8"
+    }
+  },
+  {
+    "title": "GPM: Leveraging Persistent Memory from a GPU",
+    "authors": "<b>Shweta Pandey</b>*, Aditya K Kamath*, Arkaprava Basu",
+    "venue": "ASPLOS 2022, Lausanne, Switzerland (*Equal contribution)",
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3503222.3507758",
+      "code": "https://github.com/csl-iisc/GPM-ASPLOS22",
+      "video": "https://www.youtube.com/watch?v=WER5mZPYFSc"
+    }
+  }
+],
   "experience": [
     {
       "role": "PhD Student",
