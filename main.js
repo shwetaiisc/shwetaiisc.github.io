@@ -5,7 +5,6 @@ fetch('content.json')
 
     // ==== About: bind fields, do NOT overwrite the whole section ====
     if (content.about) {
-      // photo (optional)
       const photoEl = document.getElementById('about-photo');
       if (photoEl && content.about.photo) photoEl.src = content.about.photo;
 
@@ -14,9 +13,9 @@ fetch('content.json')
 
       const titleEl = document.getElementById('about-title');
       if (titleEl && content.about.title) {
-        // keep the CSA link; only replace leading text before the comma
-        const afterComma = titleEl.innerHTML.substring(titleEl.innerHTML.indexOf(','));
-        titleEl.innerHTML = `${content.about.title}${afterComma !== -1 ? afterComma : ''}`;
+        const commaIdx = titleEl.innerHTML.indexOf(',');
+        const suffix = commaIdx !== -1 ? titleEl.innerHTML.slice(commaIdx) : '';
+        titleEl.innerHTML = `${content.about.title}${suffix}`;
       }
 
       const bioEl = document.getElementById('about-bio');
@@ -32,7 +31,7 @@ fetch('content.json')
       }
     }
 
-    // ==== Publications (unchanged) ====
+    // ==== Publications ====
     document.getElementById('publications').innerHTML = `
       <h2>Publications</h2>
       <ul>
@@ -48,7 +47,7 @@ fetch('content.json')
       </ul>
     `;
 
-    // ==== Education (unchanged) ====
+    // ==== Education ====
     document.getElementById('education').innerHTML = `
       <h2>Education</h2>
       <ul>
@@ -61,7 +60,7 @@ fetch('content.json')
       </ul>
     `;
 
-    // ==== Experience (unchanged) ====
+    // ==== Experience ====
     document.getElementById('experience').innerHTML = `
       <h2>Experience</h2>
       <ul>
@@ -74,7 +73,7 @@ fetch('content.json')
       </ul>
     `;
 
-    // ==== Talks / News / Projects / Contact (unchanged) ====
+    // ==== Talks ====
     document.getElementById('talks').innerHTML = `
       <h2>Talks</h2>
       ${content.talks.length === 0 ? "<p>No talks yet.</p>" : ""}
@@ -90,6 +89,7 @@ fetch('content.json')
       </ul>
     `;
 
+    // ==== News ====
     document.getElementById('news').innerHTML = `
       <h2>News</h2>
       ${content.news.length === 0 ? "<p>No news yet.</p>" : ""}
@@ -104,6 +104,7 @@ fetch('content.json')
       </ul>
     `;
 
+    // ==== Projects ====
     document.getElementById('projects').innerHTML = `
       <h2>Projects</h2>
       <ul>
@@ -116,6 +117,7 @@ fetch('content.json')
       </ul>
     `;
 
+    // ==== Contact ====
     document.getElementById('contact').innerHTML = `
       <h2>Contact</h2>
       <ul>
@@ -128,7 +130,7 @@ fetch('content.json')
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Active link on scroll (unchanged)
+    // Highlight active navbar link on scroll
     const navLinks = document.querySelectorAll('nav a');
     const sectionIds = ['about','publications','education','experience','talks','news','projects','contact'];
     const sectionElements = sectionIds.map(id => document.getElementById(id));
@@ -143,25 +145,8 @@ fetch('content.json')
         if (link.getAttribute('href') === '#' + current) link.classList.add('active');
       });
     });
+
   })
-  // Mobile menu toggle
-const navEl = document.querySelector('nav');
-const menuBtn = document.getElementById('menuBtn');
-
-if (menuBtn) {
-  menuBtn.addEventListener('click', () => {
-    const open = navEl.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-
-  // Close menu when a link is tapped
-  const links = document.querySelectorAll('nav a');
-  links.forEach(a => a.addEventListener('click', () => {
-    navEl.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded', 'false');
-  }));
-}
-
   .catch(e => {
     document.querySelector('main').innerHTML = "<p>Could not load content. Please check your content.json file.</p>";
     console.error(e);
