@@ -2,18 +2,37 @@
 fetch('content.json')
   .then(res => res.json())
   .then(content => {
-    // About
-    document.getElementById('about').innerHTML = `
-    ${content.about.photo ? `<img src="${content.about.photo}" alt="${content.about.name}" class="profile-pic">` : ""}
-      <h2>About Me</h2>
-      <h3>${content.about.name}</h3>
-      <p><strong>${content.about.title}</strong></p>
-      <p>${content.about.bio}</p>
-      <p><b>Location:</b> ${content.about.location}</p>
-      <p><b>Email:</b> <a href="mailto:${content.about.email}">${content.about.email}</a></p>
-    `;
 
-    // Publications
+    // ==== About: bind fields, do NOT overwrite the whole section ====
+    if (content.about) {
+      // photo (optional)
+      const photoEl = document.getElementById('about-photo');
+      if (photoEl && content.about.photo) photoEl.src = content.about.photo;
+
+      const nameEl = document.getElementById('about-name');
+      if (nameEl && content.about.name) nameEl.textContent = content.about.name;
+
+      const titleEl = document.getElementById('about-title');
+      if (titleEl && content.about.title) {
+        // keep the CSA link; only replace leading text before the comma
+        const afterComma = titleEl.innerHTML.substring(titleEl.innerHTML.indexOf(','));
+        titleEl.innerHTML = `${content.about.title}${afterComma !== -1 ? afterComma : ''}`;
+      }
+
+      const bioEl = document.getElementById('about-bio');
+      if (bioEl && content.about.bio) bioEl.textContent = content.about.bio;
+
+      const locEl = document.getElementById('about-location');
+      if (locEl && content.about.location) locEl.textContent = content.about.location;
+
+      const emailEl = document.getElementById('about-email');
+      if (emailEl && content.about.email) {
+        emailEl.textContent = content.about.email;
+        emailEl.href = `mailto:${content.about.email}`;
+      }
+    }
+
+    // ==== Publications (unchanged) ====
     document.getElementById('publications').innerHTML = `
       <h2>Publications</h2>
       <ul>
@@ -28,20 +47,21 @@ fetch('content.json')
         `).join('')}
       </ul>
     `;
-// Education
-document.getElementById('education').innerHTML = `
-  <h2>Education</h2>
-  <ul>
-    ${content.education.map(edu => `
-      <li>
-        <b>${edu.degree}</b>, ${edu.institution} <span style="color: #888">(${edu.years})</span><br>
-        ${edu.gpa ? `GPA: ${edu.gpa}` : ''}
-      </li>
-    `).join('')}
-  </ul>
-`;
 
-    // Experience
+    // ==== Education (unchanged) ====
+    document.getElementById('education').innerHTML = `
+      <h2>Education</h2>
+      <ul>
+        ${content.education.map(edu => `
+          <li>
+            <b>${edu.degree}</b>, ${edu.institution} <span style="color: #888">(${edu.years})</span>
+            ${edu.gpa ? `<br>GPA: ${edu.gpa}` : ''}
+          </li>
+        `).join('')}
+      </ul>
+    `;
+
+    // ==== Experience (unchanged) ====
     document.getElementById('experience').innerHTML = `
       <h2>Experience</h2>
       <ul>
@@ -54,7 +74,7 @@ document.getElementById('education').innerHTML = `
       </ul>
     `;
 
-    // Talks
+    // ==== Talks / News / Projects / Contact (unchanged) ====
     document.getElementById('talks').innerHTML = `
       <h2>Talks</h2>
       ${content.talks.length === 0 ? "<p>No talks yet.</p>" : ""}
@@ -70,7 +90,6 @@ document.getElementById('education').innerHTML = `
       </ul>
     `;
 
-    // News
     document.getElementById('news').innerHTML = `
       <h2>News</h2>
       ${content.news.length === 0 ? "<p>No news yet.</p>" : ""}
@@ -85,7 +104,6 @@ document.getElementById('education').innerHTML = `
       </ul>
     `;
 
-    // Projects
     document.getElementById('projects').innerHTML = `
       <h2>Projects</h2>
       <ul>
@@ -98,7 +116,6 @@ document.getElementById('education').innerHTML = `
       </ul>
     `;
 
-    // Contact
     document.getElementById('contact').innerHTML = `
       <h2>Contact</h2>
       <ul>
@@ -111,23 +128,19 @@ document.getElementById('education').innerHTML = `
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Highlight active navbar link on scroll
+    // Active link on scroll (unchanged)
     const navLinks = document.querySelectorAll('nav a');
-    const sectionIds = ['about','publications','experience','talks','news','projects','contact'];
+    const sectionIds = ['about','publications','education','experience','talks','news','projects','contact'];
     const sectionElements = sectionIds.map(id => document.getElementById(id));
     window.addEventListener('scroll', () => {
       let current = '';
       sectionElements.forEach((sec, idx) => {
         const top = sec.getBoundingClientRect().top + window.scrollY - 80;
-        if(window.scrollY >= top) {
-          current = sectionIds[idx];
-        }
+        if (window.scrollY >= top) current = sectionIds[idx];
       });
       navLinks.forEach(link => {
         link.classList.remove('active');
-        if(link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
+        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
       });
     });
   })
