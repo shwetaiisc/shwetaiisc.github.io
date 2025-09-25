@@ -24,24 +24,29 @@
   <main class="main-wrapper">
 
     <!-- ✨ ABOUT SECTION -->
-    <section id="about" class="header">
-      <div class="header-photo">
-        <img src="shweta.png" alt="Shweta Pandey">
-      </div>
-      <div class="header-info">
-        <h1>Shweta Pandey</h1>
-        <h2>PhD Student, <a href="https://www.csa.iisc.ac.in/" target="_blank">CSA @ IISc Bangalore</a></h2>
-        <p class="bio">
-          I am a PhD student at IISc working on high-performance systems that span heterogeneous compute and memory hierarchies—focusing on GPU-accelerated storage, persistence, and inference.
-          My research explores architectural and software techniques to optimize GPU performance across storage engines, database systems, and AI pipelines.
-        </p>
-        <p class="bio">
-          I work with <a href="https://www.csa.iisc.ac.in/~arkapravab/" target="_blank">Prof. Arkaprava Basu</a> at the
-          <a href="https://www.csa.iisc.ac.in/" target="_blank">Department of Computer Science and Automation, IISc</a>.
-        </p>
-        <p class="bio"><strong>Email:</strong> <a href="mailto:shweta@iisc.ac.in">shweta@iisc.ac.in</a></p>
-      </div>
-    </section>
+   <section id="about" class="about-card">
+  <div class="about-grid">
+    <img id="about-photo" src="shweta.png" alt="Shweta Pandey" class="about-photo" />
+    <div class="about-text">
+      <h1 id="about-name">Shweta Pandey</h1>
+      <h2 id="about-title">
+        PhD Student, <a href="https://www.csa.iisc.ac.in/" target="_blank">CSA @ IISc Bangalore</a>
+      </h2>
+
+      <p id="about-bio" class="bio">
+        <!-- main.js will inject bio text -->
+      </p>
+
+      <p class="bio">
+        I work with <a href="https://www.csa.iisc.ac.in/~arkapravab/" target="_blank">Prof. Arkaprava Basu</a> at the
+        <a href="https://www.csa.iisc.ac.in/" target="_blank">Department of Computer Science and Automation, IISc</a>.
+      </p>
+
+      <p class="meta"><b>Location:</b> <span id="about-location">Bangalore, India</span></p>
+      <p class="meta"><b>Email:</b> <a id="about-email" href="mailto:shwetapandey@iisc.ac.in">shwetapandey@iisc.ac.in</a></p>
+    </div>
+  </div>
+</section>
 
     <!-- 🔬 OTHER SECTIONS (auto-populated via JS) -->
     <section id="publications"></section>
