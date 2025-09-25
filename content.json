@@ -107,18 +107,43 @@
       "link": ""
     }
   ],
-  "news": [
+"news": [
     {
-      "date": "2025-09-10",
-      "text": "Our paper on H-Rocks accepted at SIGMOD 2025!",
-      "link": ""
-    },
-    {
-      "date": "2025-08-15",
-      "text": "Presented H-Rocks at IIT Bombay SysTalk 2025.",
-      "link": ""
-    }
-  ],
+    "date": "2025-09",
+    "text": "Presented H-Rocks at SysTalk, IIT Bombay.",
+    "link": "https://www.cse.iitb.ac.in/~biswa/systalksind.html"
+  },
+  {
+    "date": "2025-07",
+    "text": "Presented HyCache at USENIX ATC (Boston).",
+    "link": ""
+  },
+  {
+    "date": "2025-06",
+    "text": "Presented H-Rocks at SIGMOD (Berlin).",
+    "link": ""
+  },
+  {
+    "date": "2025-03",
+    "text": "HyCache accepted at USENIX ATC 2025.",
+    "link": ""
+  },
+  {
+    "date": "2024-12",
+    "text": "H-Rocks accepted at SIGMOD 2025.",
+    "link": ""
+  },
+  {
+    "date": "2024-08",
+    "text": "Finished my internship at Adobe Research.",
+    "link": "https://research.adobe.com/person/subrata-mitra/"
+  },
+  {
+    "date": "2024-05",
+    "text": "Started my internship at Adobe Research.",
+    "link": "https://research.adobe.com/person/subrata-mitra/"
+  }
+],
   "projects": [
   {
     "name": "Optimizing Text-to-Image Generation Inference",
