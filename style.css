@@ -184,6 +184,68 @@ footer {
   text-decoration: underline;
 }
 
+/* About card */
+.about-card {
+  background: #fff;
+  border: 1px solid #e5eaf2;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  padding: 18px;
+  margin-bottom: 2em;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.about-photo {
+  width: 160px !important;
+  height: 160px !important;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid var(--accent);
+  box-shadow: 0 2px 8px rgba(30, 53, 94, 0.12);
+}
+
+.about-text h1 {
+  margin: 0 0 6px 0;
+  font-size: 1.6em;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.about-text h2 {
+  margin: 0 0 12px 0;
+  font-size: 1em;
+  font-weight: 500;
+  color: #555;
+}
+
+.bio {
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+.meta {
+  margin: 6px 0;
+}
+
+@media (max-width: 640px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  .about-photo {
+    width: 140px !important;
+    height: 140px !important;
+  }
+}
+
+
 @media (max-width: 600px) {
   main {
     padding: 1em 0.5em;
