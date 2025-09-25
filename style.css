@@ -227,3 +227,9 @@ footer {
 @media (max-width: 600px) {
   main { padding: 1em 0.5em; }
 }
+
+/* Hide any hamburger/menu button if present */
+.menu-btn,
+button[aria-label="Toggle menu"] {
+  display: none !important;
+}
