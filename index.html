@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Shweta Pandey | Personal Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shweta Pandey</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <nav>
     <ul>
-      <li><a href="#about">About</a></li>
+      <li><a href="#about" class="active">About</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -24,14 +20,25 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-  <div class="sidebar">
-  <img src="shweta.png" alt="Shweta Pandey" class="profile-pic-square">
-  <h2>Shweta Pandey</h2>
-  <p>PhD Student</p>
-  <p>IISc Bangalore</p>
-  </div>
+
   <main>
-    <section id="about"></section>
+    <section id="about">
+      <div class="profile-flex">
+        <img src="shweta.png" alt="Shweta Pandey" class="profile-img-left" />
+        <div>
+          <h1>Shweta Pandey</h1>
+          <h3>PhD Student, <a href="https://www.csa.iisc.ac.in/" target="_blank">CSA @ IISc Bangalore</a></h3>
+          <p>
+            I am a PhD student at IISc working on high-performance systems that span heterogeneous compute and memory hierarchies—focusing on GPU-accelerated storage, persistence, and inference.
+            My research explores architectural and software techniques to optimize GPU performance across storage engines, database systems, and AI pipelines.
+          </p>
+          <p>
+            I work with <a href="https://www.csa.iisc.ac.in/~arkapravab/" target="_blank">Prof. Arkaprava Basu</a> at the <a href="https://www.csa.iisc.ac.in/" target="_blank">Department of Computer Science and Automation, IISc</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section id="publications"></section>
     <section id="education"></section>
     <section id="experience"></section>
@@ -40,9 +47,11 @@
     <section id="projects"></section>
     <section id="contact"></section>
   </main>
+
   <footer>
-    <p>© <span id="year"></span> Shweta Pandey</p>
+    &copy; <span id="year"></span> Shweta Pandey. All rights reserved.
   </footer>
+
   <script src="main.js"></script>
 </body>
 </html>
