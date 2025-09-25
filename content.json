@@ -7,76 +7,79 @@
     "location": "Bangalore, India"
   },
   "publications": [
-  {
-    "title": "HyCache: Hybrid Caching for Accelerating DNN Input Preprocessing Pipelines",
-    "authors": "Keshav Vinayak Jha, <b>Shweta Pandey</b>, Murali Annavaram, Arkaprava Basu",
-    "venue": "USENIX ATC 2025",
-    "links": {
-      "paper": "https://www.usenix.org/conference/atc25/presentation/jha"
+    {
+      "title": "HyCache: Hybrid Caching for Accelerating DNN Input Preprocessing Pipelines",
+      "authors": "Keshav Vinayak Jha, <b>Shweta Pandey</b>, Murali Annavaram, Arkaprava Basu",
+      "venue": "USENIX ATC 2025",
+      "links": {
+        "paper": "https://www.usenix.org/conference/atc25/presentation/jha"
+      }
+    },
+    {
+      "title": "H-Rocks: CPU-GPU Accelerated Heterogeneous RocksDB on Persistent Memory",
+      "authors": "<b>Shweta Pandey</b>, Arkaprava Basu",
+      "venue": "ACM SIGMOD 2025",
+      "links": {
+        "paper": "https://dl.acm.org/doi/10.1145/3709694",
+        "code": "https://github.com/csl-iisc/H-Rocks-SIGMOD25-artifact",
+        "video": "https://csl.csa.iisc.ac.in/video/hrocks.mp4"
+      }
+    },
+    {
+      "title": "Scoped Buffered Persistency Models for GPUs",
+      "authors": "<b>Shweta Pandey</b>*, Aditya K Kamath*, Arkaprava Basu",
+      "venue": "ASPLOS 2023, Vancouver, Canada (*Equal contribution)",
+      "links": {
+        "paper": "https://dl.acm.org/doi/10.1145/3575693.3575749",
+        "code": "https://github.com/csl-iisc/SBRP-ASPLOS23",
+        "video": "https://www.youtube.com/watch?v=g2LdLBIDww8"
+      }
+    },
+    {
+      "title": "GPM: Leveraging Persistent Memory from a GPU",
+      "authors": "<b>Shweta Pandey</b>*, Aditya K Kamath*, Arkaprava Basu",
+      "venue": "ASPLOS 2022, Lausanne, Switzerland (*Equal contribution)",
+      "links": {
+        "paper": "https://dl.acm.org/doi/10.1145/3503222.3507758",
+        "code": "https://github.com/csl-iisc/GPM-ASPLOS22",
+        "video": "https://www.youtube.com/watch?v=WER5mZPYFSc"
+      }
     }
-  },
-  {
-    "title": "H-Rocks: CPU-GPU Accelerated Heterogeneous RocksDB on Persistent Memory",
-    "authors": "<b>Shweta Pandey</b>, Arkaprava Basu",
-    "venue": "ACM SIGMOD 2025",
-    "links": {
-      "paper": "https://dl.acm.org/doi/10.1145/3709694",
-      "code": "https://github.com/csl-iisc/H-Rocks-SIGMOD25-artifact",
-      "video": "https://csl.csa.iisc.ac.in/video/hrocks.mp4"
+  ],
+  "education": [
+    {
+      "degree": "Ph.D. in Computer Science and Engineering",
+      "institution": "Indian Institute of Science, Bangalore",
+      "years": "2021 – Present",
+      "gpa": "8.3/10"
+    },
+    {
+      "degree": "Masters by Research in Computer Science and Engineering",
+      "institution": "Indian Institute of Science, Bangalore",
+      "years": "2018 – 2021",
+      "gpa": "8.8/10"
+    },
+    {
+      "degree": "Bachelors in Computer Science and Engineering",
+      "institution": "UIT (RGPV), Bhopal",
+      "years": "2014 – 2018",
+      "gpa": "8.8/10"
     }
-  },
-  {
-    "title": "Scoped Buffered Persistency Models for GPUs",
-    "authors": "<b>Shweta Pandey</b>*, Aditya K Kamath*, Arkaprava Basu",
-    "venue": "ASPLOS 2023, Vancouver, Canada (*Equal contribution)",
-    "links": {
-      "paper": "https://dl.acm.org/doi/10.1145/3575693.3575749",
-      "code": "https://github.com/csl-iisc/SBRP-ASPLOS23",
-      "video": "https://www.youtube.com/watch?v=g2LdLBIDww8"
+  ],
+  "experience": [
+    {
+      "role": "Research Intern",
+      "organization": "Adobe Research, India",
+      "years": "2024",
+      "description": "Worked on improving the throughput of text-to-image generation models using architectural and software-level optimizations for large-scale diffusion transformers."
+    },
+    {
+      "role": "Software Engineering Intern",
+      "organization": "Smartek Pvt. Ltd.",
+      "years": "2018",
+      "description": "Built a chatbot for an airline company using NLP to parse queries, detect intent, and generate responses."
     }
-  },
-  {
-    "title": "GPM: Leveraging Persistent Memory from a GPU",
-    "authors": "<b>Shweta Pandey</b>*, Aditya K Kamath*, Arkaprava Basu",
-    "venue": "ASPLOS 2022, Lausanne, Switzerland (*Equal contribution)",
-    "links": {
-      "paper": "https://dl.acm.org/doi/10.1145/3503222.3507758",
-      "code": "https://github.com/csl-iisc/GPM-ASPLOS22",
-      "video": "https://www.youtube.com/watch?v=WER5mZPYFSc"
-    }
-  }
-],
-"education": [
-  {
-    "degree": "Ph.D. in Computer Science and Engineering",
-    "institution": "Indian Institute of Science (IISc), Bangalore",
-    "years": "2021 – Present",
-  },
-  {
-    "degree": "Masters by Research in Computer Science and Engineering",
-    "institution": "Indian Institute of Science (IISc), Bangalore",
-    "years": "2018 – 2021",
-  },
-  {
-    "degree": "Bachelors in Computer Science and Engineering",
-    "institution": "UIT (RGPV), Bhopal",
-    "years": "2014 – 2018",
-  }
-]
-"experience": [
-  {
-    "role": "Research Intern",
-    "organization": "Adobe Research, India",
-    "years": "2024",
-    "description": "Worked on improving the throughput of text-to-image generation models using architectural and software-level optimizations for large-scale diffusion transformers."
-  },
-  {
-    "role": "Software Engineering Intern",
-    "organization": "Smartek Pvt. Ltd.",
-    "years": "2018",
-    "description": "Built a chatbot for an airline company using NLP to parse queries, detect intent, and generate responses."
-  }
-]
+  ],
   "talks": [
     {
       "title": "H-Rocks: CPU-GPU accelerated RocksDB on Persistent Memory",
@@ -157,26 +160,6 @@
       "title": "Bachelors Rank Holder",
       "year": "2018",
       "description": "Ranked 3rd among 1000+ students in Computer Science."
-    }
-  ],
-  "education": [
-    {
-      "degree": "Ph.D. in Computer Science and Engineering",
-      "institution": "Indian Institute of Science, Bangalore",
-      "years": "2021 – Present",
-      "gpa": "8.3/10"
-    },
-    {
-      "degree": "Masters by Research in Computer Science and Engineering",
-      "institution": "Indian Institute of Science, Bangalore",
-      "years": "2018 – 2021",
-      "gpa": "8.8/10"
-    },
-    {
-      "degree": "Bachelors in Computer Science and Engineering",
-      "institution": "UIT (RGPV), Bhopal",
-      "years": "2014 – 2018",
-      "gpa": "8.8/10"
     }
   ],
   "contact": {
