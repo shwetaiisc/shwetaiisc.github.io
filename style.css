@@ -5,6 +5,7 @@
   --text: #222;
 }
 
+/* Base */
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -13,6 +14,7 @@ body {
   line-height: 1.7;
 }
 
+/* Top nav */
 nav {
   background: var(--primary);
   padding: 0.7em 0;
@@ -28,11 +30,10 @@ nav ul {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  gap: 1.2em;
 }
 
-nav li {
-  margin: 0 1.2em;
-}
+nav li { margin: 0; }
 
 nav a {
   color: #fff;
@@ -48,6 +49,7 @@ nav a.active {
   text-decoration: underline;
 }
 
+/* Main content container */
 main {
   max-width: 800px;
   margin: 2em auto;
@@ -59,7 +61,7 @@ main {
 
 section {
   margin-bottom: 2.8em;
-  scroll-margin-top: 68px;
+  scroll-margin-top: 68px; /* for sticky nav offset */
 }
 
 section h2 {
@@ -69,6 +71,7 @@ section h2 {
   margin-top: 0;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 1em 0;
@@ -78,113 +81,16 @@ footer {
   margin-top: 2em;
 }
 
+/* News & Talks list accents */
 .news-item, .talk-item {
   margin-bottom: 1.1em;
   padding-left: 0.8em;
   border-left: 3px solid var(--accent);
 }
 
-/* Profile section styling */
-.profile-flex {
-  display: flex;
-  align-items: flex-start;
-  gap: 2em;
-  flex-wrap: wrap;
-}
-
-.profile-img-left {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 3px solid var(--accent);
-  box-shadow: 0 2px 8px rgba(30, 53, 94, 0.1);
-}
-
-
-.profile-flex h1 {
-  margin: 0;
-  font-size: 1.8em;
-  color: var(--primary);
-}
-
-.profile-flex h3 {
-  margin-top: 0.3em;
-  font-size: 1.1em;
-  color: #444;
-}
-
-.profile-flex p {
-  margin-top: 1em;
-  font-size: 1em;
-  color: #333;
-}
-
-.profile-flex a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.profile-flex a:hover {
-  text-decoration: underline;
-}
-
-/* About (Header) section */
-.header {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid #e5eaf2;
-  border-radius: 12px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-  margin-bottom: 2em;
-}
-
-.header-photo img {
-  width: 160px;   /* fixed size */
-  height: 160px;
-  border-radius: 12px;
-  object-fit: cover;
-  border: 2px solid var(--accent);
-  box-shadow: 0 2px 8px rgba(30, 53, 94, 0.12);
-}
-
-.header-info {
-  flex: 1;
-}
-
-.header-info h1 {
-  font-size: 1.6em;
-  font-weight: 700;
-  margin: 0 0 8px 0;
-  color: var(--primary);
-}
-
-.header-info h2 {
-  font-size: 1em;
-  font-weight: 500;
-  margin: 0 0 14px 0;
-  color: #555;
-}
-
-.bio {
-  font-size: 0.95em;
-  line-height: 1.6;
-  margin-bottom: 12px;
-}
-
-.bio a {
-  color: var(--accent);
-  font-weight: 600;
-  text-decoration: none;
-}
-.bio a:hover {
-  text-decoration: underline;
-}
-
-/* About card */
+/* =========================
+   ABOUT CARD (photo + text)
+   ========================= */
 .about-card {
   background: #fff;
   border: 1px solid #e5eaf2;
@@ -198,18 +104,18 @@ footer {
   display: grid;
   grid-template-columns: 160px 1fr;
   gap: 20px;
-  align-items: center;
+  align-items: center; /* vertically align image with text */
 }
 
 .about-photo {
   width: 160px !important;
   height: 160px !important;
-  object-fit: cover;
+  object-fit: cover;          /* keep square crop */
+  object-position: 50% 22%;   /* show more forehead; adjust 18–30% to taste */
   border-radius: 12px;
   border: 2px solid var(--accent);
   box-shadow: 0 2px 8px rgba(30, 53, 94, 0.12);
-  object-position: 50% 22%;
-  margin-top: 6px;
+  margin-top: 6px;            /* tiny nudge down */
 }
 
 .about-text h1 {
@@ -232,10 +138,63 @@ footer {
   margin: 0 0 12px 0;
 }
 
-.meta {
-  margin: 6px 0;
+.bio a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+.bio a:hover { text-decoration: underline; }
+
+.meta { margin: 6px 0; }
+
+/* =========================
+   OPTIONAL legacy profile styles (safe to keep)
+   ========================= */
+.profile-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 2em;
+  flex-wrap: wrap;
 }
 
+.profile-img-left {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid var(--accent);
+  box-shadow: 0 2px 8px rgba(30, 53, 94, 0.1);
+}
+
+.profile-flex h1 { margin: 0; font-size: 1.8em; color: var(--primary); }
+.profile-flex h3 { margin-top: 0.3em; font-size: 1.1em; color: #444; }
+.profile-flex p  { margin-top: 1em; font-size: 1em; color: #333; }
+.profile-flex a  { color: var(--accent); text-decoration: none; }
+.profile-flex a:hover { text-decoration: underline; }
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+/* Compact mobile nav: single-row, scrollable if overflow */
+@media (max-width: 768px) {
+  nav { padding: 0.5em 0; }
+
+  nav ul {
+    justify-content: flex-start;
+    flex-wrap: nowrap;            /* keep one line */
+    overflow-x: auto;             /* allow sideways scroll */
+    -webkit-overflow-scrolling: touch;
+    gap: 0.8rem;
+    padding: 0.4em 0.6em;
+  }
+
+  nav ul::-webkit-scrollbar { display: none; } /* hide scrollbar on iOS/Chrome */
+
+  nav a { font-size: 1rem; padding: 0.25em 0.35em; }
+}
+
+/* Stack About card on small phones, reduce paddings */
 @media (max-width: 640px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -244,66 +203,11 @@ footer {
   .about-photo {
     width: 140px !important;
     height: 140px !important;
+    margin-top: 0;
   }
 }
 
-
+/* Main padding tweak for very small screens */
 @media (max-width: 600px) {
-  main {
-    padding: 1em 0.5em;
-  }
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  nav li {
-    margin: 0.5em 0;
-  }
-}
-
-/* --- Mobile nav toggle --- */
-.menu-btn {
-  display: none;
-  background: transparent;
-  border: 0;
-  color: #fff;
-  font-size: 1.6rem;
-  line-height: 1;
-  padding: 4px 10px;
-  cursor: pointer;
-  position: absolute;
-  left: 10px;
-  top: 6px;
-}
-
-@media (max-width: 768px) {
-  nav {
-    position: sticky;
-    top: 0;
-  }
-
-  /* show hamburger; hide list by default */
-  .menu-btn { display: block; }
-
-  nav ul {
-    display: none;                 /* hidden until toggled */
-    flex-direction: column;
-    align-items: center;
-    gap: 0.2em;
-    background: var(--primary);
-    padding: 0.7em 0.5em;
-    margin: 0;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-
-  /* when nav has .open, show the menu */
-  nav.open ul { display: flex; }
-
-  nav li { margin: 0.35em 0; }
-
-  nav a {
-    font-size: 1.05em;
-    padding: 6px 10px;
-  }
+  main { padding: 1em 0.5em; }
 }
