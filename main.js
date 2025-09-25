@@ -20,16 +20,19 @@ function throttle(fn, wait = 100) {
   };
 }
 
-// Smooth scroll to an element with offset for sticky nav
+// Smooth scroll to an element with offset for sticky nav (desktop only)
 function scrollToSection(el) {
   if (!el) return;
   const nav = document.querySelector('nav');
-  const navH = nav ? nav.getBoundingClientRect().height : 0;
-  const top = window.scrollY + el.getBoundingClientRect().top - (navH + 10); // small gap
+  // if nav is hidden (mobile), height is 0
+  const navH = (nav && getComputedStyle(nav).display !== 'none')
+    ? nav.getBoundingClientRect().height
+    : 0;
+  const top = window.scrollY + el.getBoundingClientRect().top - (navH + 10);
   window.scrollTo({ top, behavior: 'smooth' });
 }
 
-// Build safe link list from pub.links object
+// Helpers
 function renderLinks(links = {}) {
   return Object.entries(links)
     .filter(([_, url]) => !!url)
@@ -40,19 +43,18 @@ function renderLinks(links = {}) {
     .join(' ');
 }
 
-// Highlight active navbar link based on scroll position
 function setupActiveNav() {
-  const navLinks = Array.from(document.querySelectorAll('nav a'));
-  const sectionIds = navLinks
+  const nav = document.querySelector('nav');
+  if (!nav || getComputedStyle(nav).display === 'none') return; // skip on mobile
+
+  const navLinks = Array.from(nav.querySelectorAll('a'));
+  const sections = navLinks
     .map(a => a.getAttribute('href'))
     .filter(h => h && h.startsWith('#'))
-    .map(h => h.slice(1));
-
-  const sections = sectionIds
+    .map(h => h.slice(1))
     .map(id => ({ id, el: document.getElementById(id) }))
     .filter(s => s.el);
 
-  const nav = document.querySelector('nav');
   const getNavH = () => (nav ? nav.getBoundingClientRect().height : 0);
 
   const onScroll = throttle(() => {
@@ -67,13 +69,10 @@ function setupActiveNav() {
     });
   }, 100);
 
-  // Recompute on resize/content changes
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', throttle(onScroll, 150));
-  // Initial
   onScroll();
 
-  // Smooth anchor clicks
   navLinks.forEach(a => {
     const hash = a.getAttribute('href') || '';
     if (hash.startsWith('#')) {
@@ -81,10 +80,9 @@ function setupActiveNav() {
       a.addEventListener('click', (e) => {
         e.preventDefault();
         scrollToSection(target);
-        // update active state immediately
         navLinks.forEach(l => l.classList.remove('active'));
         a.classList.add('active');
-        history.replaceState(null, '', hash); // keep hash in URL
+        history.replaceState(null, '', hash);
       });
     }
   });
@@ -94,7 +92,7 @@ function setupActiveNav() {
 fetch('content.json')
   .then(res => res.json())
   .then(content => {
-    // ==== About: bind fields, do NOT overwrite the whole section ====
+    // ==== About: bind fields ====
     if (content.about) {
       const { photo, name, title, bio, location, email } = content.about;
 
@@ -106,7 +104,6 @@ fetch('content.json')
 
       const titleEl = document.getElementById('about-title');
       if (titleEl && title) {
-        // Keep the CSA link already in the markup; replace only the text before the first comma
         const html = titleEl.innerHTML;
         const commaIdx = html.indexOf(',');
         const suffix = commaIdx !== -1 ? html.slice(commaIdx) : '';
@@ -188,14 +185,14 @@ fetch('content.json')
               <b>${talk.title || ''}</b><br>
               <span>${talk.event || ''}</span>
               <span style="color:#888;"> (${talk.date || ''})</span>
-              ${talk.link ? `<br><a href="${talk.link}" target="_blank" rel="noopener noreferrer">Link</a>` : ''}
+              ${talk.link ? `<br><a href="${talk.link}" target="_blank" rel="noopener">Link</a>` : ''}
             </li>
           `).join('')}
         </ul>
       `;
     }
 
-    // ==== News ==== (render in the order provided)
+    // ==== News ====
     const newsRoot = document.getElementById('news');
     if (newsRoot) {
       newsRoot.innerHTML = `
@@ -206,7 +203,7 @@ fetch('content.json')
             <li class="news-item">
               <span style="color:#888;">${item.date || ''}:</span>
               ${item.text || ''}
-              ${item.link ? `<br><a href="${item.link}" target="_blank" rel="noopener noreferrer">More</a>` : ''}
+              ${item.link ? `<br><a href="${item.link}" target="_blank" rel="noopener">More</a>` : ''}
             </li>
           `).join('')}
         </ul>
@@ -222,7 +219,7 @@ fetch('content.json')
           ${(content.projects || []).map(proj => `
             <li>
               <b>${proj.name || ''}</b>: ${proj.description || ''}
-              ${proj.link ? ` [<a href="${proj.link}" target="_blank" rel="noopener noreferrer">Link</a>]` : ''}
+              ${proj.link ? ` [<a href="${proj.link}" target="_blank" rel="noopener">Link</a>]` : ''}
             </li>
           `).join('')}
         </ul>
@@ -236,8 +233,8 @@ fetch('content.json')
         <h2>Contact</h2>
         <ul>
           <li><b>Email:</b> <a href="mailto:${content.contact.email}">${content.contact.email}</a></li>
-          ${content.contact.linkedin ? `<li><b>LinkedIn:</b> <a href="${content.contact.linkedin}" target="_blank" rel="noopener noreferrer">${content.contact.linkedin}</a></li>` : ''}
-          <li><b>GitHub:</b> <a href="${content.contact.github}" target="_blank" rel="noopener noreferrer">${content.contact.github}</a></li>
+          ${content.contact.linkedin ? `<li><b>LinkedIn:</b> <a href="${content.contact.linkedin}" target="_blank" rel="noopener">${content.contact.linkedin}</a></li>` : ''}
+          <li><b>GitHub:</b> <a href="${content.contact.github}" target="_blank" rel="noopener">${content.contact.github}</a></li>
         </ul>
       `;
     }
@@ -246,17 +243,17 @@ fetch('content.json')
     const yr = document.getElementById('year');
     if (yr) yr.textContent = new Date().getFullYear();
 
-    // After content renders, set up nav behavior
+    // Desktop nav behavior only (mobile nav is hidden)
     setupActiveNav();
 
-    // If the page loads with a hash (deep link), adjust scroll to account for sticky nav
+    // Adjust for hash on load
     if (location.hash) {
       const target = document.getElementById(location.hash.slice(1));
-      // slight timeout to ensure layout is final before scrolling
       setTimeout(() => scrollToSection(target), 50);
     }
   })
   .catch(e => {
-    document.querySelector('main').innerHTML = "<p>Could not load content. Please check your content.json file.</p>";
+    const main = document.querySelector('main');
+    if (main) main.innerHTML = "<p>Could not load content. Please check your content.json file.</p>";
     console.error(e);
   });
