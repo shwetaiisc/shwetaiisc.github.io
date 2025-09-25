@@ -46,26 +46,37 @@
     }
   }
 ],
-  "experience": [
-    {
-      "role": "PhD Student",
-      "organization": "IISc Bangalore",
-      "years": "2021 – Present",
-      "description": "Research in GPU-accelerated storage systems, databases, and persistent memory with a focus on end-to-end performance optimization across heterogeneous memory and compute resources."
-    },
-    {
-      "role": "Research Intern",
-      "organization": "Adobe Research, India",
-      "years": "2024",
-      "description": "Worked on improving the throughput of text-to-image generation models by optimizing diffusion transformer pipelines using architectural and software-level techniques."
-    },
-    {
-      "role": "Software Engineering Intern",
-      "organization": "Smartek Pvt. Ltd.",
-      "years": "2018",
-      "description": "Built a chatbot system for an airline using NLP techniques for parsing, intent recognition, and response generation."
-    }
-  ],
+"education": [
+  {
+    "degree": "Ph.D. in Computer Science and Engineering",
+    "institution": "Indian Institute of Science (IISc), Bangalore",
+    "years": "2021 – Present",
+  },
+  {
+    "degree": "Masters by Research in Computer Science and Engineering",
+    "institution": "Indian Institute of Science (IISc), Bangalore",
+    "years": "2018 – 2021",
+  },
+  {
+    "degree": "Bachelors in Computer Science and Engineering",
+    "institution": "UIT (RGPV), Bhopal",
+    "years": "2014 – 2018",
+  }
+]
+"experience": [
+  {
+    "role": "Research Intern",
+    "organization": "Adobe Research, India",
+    "years": "2024",
+    "description": "Worked on improving the throughput of text-to-image generation models using architectural and software-level optimizations for large-scale diffusion transformers."
+  },
+  {
+    "role": "Software Engineering Intern",
+    "organization": "Smartek Pvt. Ltd.",
+    "years": "2018",
+    "description": "Built a chatbot for an airline company using NLP to parse queries, detect intent, and generate responses."
+  }
+]
   "talks": [
     {
       "title": "H-Rocks: CPU-GPU accelerated RocksDB on Persistent Memory",
