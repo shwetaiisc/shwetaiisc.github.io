@@ -144,8 +144,7 @@
     "description": "Built a static analysis framework to identify potential null pointer dereferences using data flow and control flow analysis techniques.",
     "link": ""
   }
-]
-
+],
   "awards": [
     {
       "title": "Google PhD Fellowship",
