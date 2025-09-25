@@ -52,12 +52,6 @@
   margin: 0;
 }
 
-/* Push main content to the right */
-main {
-  margin-left: 240px; /* width of sidebar + gap */
-}
-
-
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -104,6 +98,7 @@ nav a.active {
 main {
   max-width: 800px;
   margin: 2em auto 2em auto;
+  margin-left: 240px; /* offset for sidebar */
   background: #fff;
   padding: 2em 1.5em;
   border-radius: 8px;
@@ -138,14 +133,23 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 1em 0;
+    box-shadow: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .sidebar .profile-pic-square {
+    width: 90px;
+    height: 90px;
+  }
+
   main {
+    margin-left: 0;
     padding: 1em 0.5em;
   }
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  nav li {
-    margin: 0.5em 0;
-  }
 }
+
