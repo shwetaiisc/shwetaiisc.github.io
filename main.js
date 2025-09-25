@@ -28,6 +28,18 @@ fetch('content.json')
         `).join('')}
       </ul>
     `;
+// Education
+document.getElementById('education').innerHTML = `
+  <h2>Education</h2>
+  <ul>
+    ${content.education.map(edu => `
+      <li>
+        <b>${edu.degree}</b>, ${edu.institution} <span style="color: #888">(${edu.years})</span><br>
+        ${edu.gpa ? `GPA: ${edu.gpa}` : ''}
+      </li>
+    `).join('')}
+  </ul>
+`;
 
     // Experience
     document.getElementById('experience').innerHTML = `
