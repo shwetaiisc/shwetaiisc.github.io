@@ -2,7 +2,7 @@
   "about": {
     "name": "Shweta Pandey",
     "title": "PhD Student, Indian Institute of Science (IISc)",
-    "bio": "I am a PhD student at IISc working on high-performance systems that span heterogeneous compute and memory hierarchies—focusing on GPU-accelerated storage, persistence. My research explores architectural and software techniques to optimize GPU performance across storage engines and database systems. My research is generously supported by Google PhD fellowship. ",
+    "bio": "I am a PhD student at IISc working on high-performance systems that span heterogeneous compute and memory hierarchies—focusing on GPU-accelerated storage, persistence. My research explores architectural and software techniques to optimise GPU performance across storage engines and database systems. I am also a recipient of the Google PhD fellowship.",
     "email": "shwetapandey@iisc.ac.in",
     "location": "Bangalore, India",
     "photo": "shweta.png"
@@ -13,7 +13,8 @@
       "authors": "Keshav Vinayak Jha, <b>Shweta Pandey</b>, Murali Annavaram, Arkaprava Basu",
       "venue": "USENIX ATC 2025",
       "links": {
-        "paper": "https://www.usenix.org/conference/atc25/presentation/jha"
+        "paper": "https://www.usenix.org/conference/atc25/presentation/jha",
+        "video": "https://www.youtube.com/watch?v=kZ41xCyAlKM"
       }
     },
     {
