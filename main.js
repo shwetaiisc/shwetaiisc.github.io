@@ -191,21 +191,7 @@ fetch('content.json')
         </ul>
       `;
     }
-    // ==== Awards ====
-    const projRoot = document.getElementById('awards');
-    if (projRoot) {
-      projRoot.innerHTML = `
-        <h2>Projects</h2>
-        <ul>
-          ${(content.awards || []).map(proj => `
-            <li>
-              <b>${proj.name || ''}</b>: ${proj.description || ''}
-              ${proj.link ? ` [<a href="${proj.link}" target="_blank" rel="noopener">Link</a>]` : ''}
-            </li>
-          `).join('')}
-        </ul>
-      `;
-    }
+
     // ==== News ====
     const newsRoot = document.getElementById('news');
     if (newsRoot) {
@@ -234,6 +220,21 @@ fetch('content.json')
             <li>
               <b>${proj.name || ''}</b>: ${proj.description || ''}
               ${proj.link ? ` [<a href="${proj.link}" target="_blank" rel="noopener">Link</a>]` : ''}
+            </li>
+          `).join('')}
+        </ul>
+      `;
+    }
+        // ==== Awards ====
+    const awardRoot = document.getElementById('awards');
+    if (awardRoot) {
+      awardRoot.innerHTML = `
+        <h2>Awards</h2>
+        <ul>
+          ${(content.awards || []).map(award => `
+            <li>
+              <b>${award.name || ''}</b>: ${award.description || ''}
+              ${award.link ? ` [<a href="${award.link}" target="_blank" rel="noopener">Link</a>]` : ''}
             </li>
           `).join('')}
         </ul>
