@@ -2,9 +2,7 @@
   "about": {
     "name": "Shweta Pandey",
     "title": "PhD Student, Indian Institute of Science (IISc)",
-    "bio": "I am a PhD student at IISc working on high-performance systems that span heterogeneous compute and memory hierarchies—focusing on GPU-accelerated storage, persistence. 
-    My research explores architectural and software techniques to optimize GPU performance across storage engines and database systems.
-    My research is generously supported by Google PhD fellowship. ",
+    "bio": "I am a PhD student at IISc working on high-performance systems that span heterogeneous compute and memory hierarchies—focusing on GPU-accelerated storage, persistence. My research explores architectural and software techniques to optimize GPU performance across storage engines and database systems. My research is generously supported by Google PhD fellowship. ",
     "email": "shwetapandey@iisc.ac.in",
     "location": "Bangalore, India",
     "photo": "shweta.png"
