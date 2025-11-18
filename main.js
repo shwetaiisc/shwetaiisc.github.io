@@ -225,7 +225,7 @@ fetch('content.json')
         </ul>
       `;
     }
-    // ==== Awards ====
+
 // ==== Awards ====
 const awardRoot = document.getElementById('awards');
 if (awardRoot) {
@@ -234,15 +234,13 @@ if (awardRoot) {
     <ul>
       ${(content.awards || []).map(award => `
         <li>
-          <b>${award.title || ''}</b>
-          ${award.year ? ` <span style="color:#888;">(${award.year})</span>` : ''}:
-          ${award.description || ''}
-          ${award.link ? ` [<a href="${award.link}" target="_blank" rel="noopener">Link</a>]` : ''}
+          <b>${award.title}</b> (${award.year}): ${award.description}
         </li>
       `).join('')}
     </ul>
   `;
 }
+
 
     // ==== Contact ====
     const contactRoot = document.getElementById('contact');
