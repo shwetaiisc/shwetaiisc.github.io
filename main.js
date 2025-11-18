@@ -225,21 +225,21 @@ fetch('content.json')
         </ul>
       `;
     }
-        // ==== Awards ====
-    const awardRoot = document.getElementById('awards');
-    if (awardRoot) {
-      awardRoot.innerHTML = `
-        <h2>Awards</h2>
-        <ul>
-          ${(content.awards || []).map(award => `
-            <li>
-              <b>${award.name || ''}</b>: ${award.description || ''}
-              ${award.link ? ` [<a href="${award.link}" target="_blank" rel="noopener">Link</a>]` : ''}
-            </li>
-          `).join('')}
-        </ul>
-      `;
-    }
+    // ==== Awards ====
+const awardRoot = document.getElementById('awards');
+if (awardRoot) {
+  awardRoot.innerHTML = `
+    <h2>Awards</h2>
+    <ul>
+      ${(content.awards || []).map(award => `
+        <li>
+          <b>${award.name || ''}</b>: ${award.description || ''}
+          ${award.link ? ` [<a href="${award.link}" target="_blank" rel="noopener">Link</a>]` : ''}
+        </li>
+      `).join('')}
+    </ul>
+  `;
+}
 
     // ==== Contact ====
     const contactRoot = document.getElementById('contact');
